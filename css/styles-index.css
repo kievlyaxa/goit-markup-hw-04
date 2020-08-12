@@ -20,6 +20,7 @@ html {
     --background-footer: #2F303A;
     --rectangle-color: #AFB1B8;
     --background-client: #E5E5E5;
+    --background-color-icon-footer: rgba(255, 255, 255, 0.1);
     }
 
 body {
@@ -490,24 +491,15 @@ margin-bottom: 0;
 
 }
 
-
-/* .rectangle {
-    display: flex;
-    justify-content: center;
-    border: 1px solid;
-    border-color: var(--rectangle-color);
-    border-radius: 4px;
-    /* width: 170px;
-    height: 90px; */
-    fill: var(--rectangle-color);
-} */
+.client-link:hover {
+    fill: var(--accent-color);
+    border-color: var(--accent-color);
+} 
 
 .client-item {
     display: block;
     width: 170px;
     height: 90px;
-    border: 1px solid var(--rectangle-color);
-    outline: 1px solid green;
 }
 
 .client-item:not(:last-child) {
@@ -584,6 +576,23 @@ margin-bottom: 0;
     margin-right: 10px;
 }
 
+.network-links-image {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50% 50%;
+    background-color: var(--background-color-icon-footer);
+    /* border: 1px solid green; */
+    fill: var(--background-color);
+}
+
+.network-links-image:hover,
+.network-links-image:focus {
+    background-color:var(--accent-color);
+}
+
 .subscribe {
     width: 570px;
     padding: 72px 0 94px ;
@@ -601,7 +610,7 @@ margin-bottom: 0;
  .subscribe-button {
     display: flex;
     color: var(--background-color);
-    background-color: var(--accent-color);
+    background-color: var(--background-color-icon-footer);
     font-size: 16px;
     line-height: 30px;
     padding: 10px 28px;
@@ -612,10 +621,20 @@ margin-bottom: 0;
     cursor: pointer;
  }
 
- .subscribe-button img {
+ .subscribe-button::after  {
+     display: block;
+     content: "";
      margin-left: 10px;
- }
+     width: 24px;
+     height: 24px;
+     background-image: url(../image/svg-icons/icon-telegram.svg);
+     background-size: contain;
+     /* background-color: #fff; */
+    }
 
+.subscribe-button:hover {
+    background-color: var(--accent-color);
+}
 
 /* главный контент портфолио */
 
